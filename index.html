@@ -42,10 +42,10 @@ p{margin:0 0 12px}
 
 .hero{padding-top:24px;padding-bottom:48px;border-top:0}
 .hero .in-w{display:grid;gap:12px;justify-items:center}
-.plank{position:relative;width:min(100%,520px);--rot:-1.2deg;transform:rotate(var(--rot));filter:drop-shadow(3px 8px 7px rgba(0,0,0,.55));margin-top:22px}
-.plank .paper{padding:26px 14px 22px;background:var(--red) repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 2px,transparent 2px 5px)}
+.plank{position:relative;width:min(100%,520px);--rot:-1.2deg;transform:rotate(var(--rot));filter:drop-shadow(3px 8px 7px rgba(0,0,0,.55));margin-top:14px}
+.plank .paper{padding:10px 12px 8px;overflow:hidden;background:var(--red) repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 2px,transparent 2px 5px)}
 .plank h1{margin:0}
-.plank img{width:100%;height:auto;filter:drop-shadow(2px 3px 0 rgba(10,7,6,.55))}
+.plank img{width:100%;height:auto;margin:-9% 0 -7%;filter:drop-shadow(2px 3px 0 rgba(10,7,6,.55))}
 .plank .label-tape{position:absolute;left:10px;top:-18px;z-index:3;--rot:-2deg;font-size:12px}
 .byline .strip{font-size:19px;--rot:-1.5deg}
 .hook{margin:0;text-align:center;font:400 clamp(34px,10vw,76px)/.95 var(--title);text-transform:uppercase;text-shadow:.05em .05em 0 var(--deep);color:var(--neon)}
@@ -187,6 +187,12 @@ footer a.hal{color:var(--ink);font-weight:700;display:inline-block;padding:12px 
 .namecard{aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;background:#1B1512;padding:10px}
 .namecard .label-tape{font-size:clamp(13px,3.6vw,18px)}
 </style>
+<style>
+/* Round 2: the two buttons are a bar that is always on screen, phone and desktop. */
+.bar{grid-template-columns:1fr 1fr!important;transform:none!important}
+.bar a{flex-direction:row!important;gap:8px!important;font-size:15px!important;min-height:58px!important}
+@media (min-width:900px){.bar{display:grid!important;left:50%!important;right:auto!important;width:640px;transform:translateX(-50%)!important;bottom:16px!important;border-radius:4px}body{padding-bottom:96px!important}}
+</style>
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -214,10 +220,7 @@ footer a.hal{color:var(--ink);font-weight:700;display:inline-block;padding:12px 
     <div class="tp"><span class="label-tape label-tape--red">World Premiere Fri Oct 30</span><span class="label-tape">Austin Film Festival 2026</span></div>
    </div>
   </div>
-  <nav class="qa" id="heroActions" aria-label="Quick actions">
-   <a class="btn btn--neon" href="#trailer">&#9654;&#xFE0E; Watch the trailer</a>
-   <a class="btn" href="mailto:chris@guerreroproductions.com" data-mail="both">Email Chris</a>
-  </nav>
+  
  </div>
 </header>
 
@@ -436,21 +439,7 @@ footer a.hal{color:var(--ink);font-weight:700;display:inline-block;padding:12px 
  </div>
 </section>
 
-<section class="card wash wash--navy" id="press" aria-labelledby="h-press">
- <span data-mark="loop" style="--w:150px;bottom:1%;right:-20px;--c:var(--paper);--sw:5"></span>
- <div class="in-w">
-  <span class="credit" aria-hidden="true">For press</span>
-  <h2 class="slam" id="h-press">Press kit <em>downloads</em></h2>
-  <ul class="dl">
-   <li><a class="btn" href="press/burbank_press_kit.zip" download><span><b>Everything, one zip</b><small>burbank_press_kit.zip, 18 MB</small></span></a></li>
-   <li><a class="btn" href="press/burbank_poster.jpg" download><span><b>Poster</b><small>JPG</small></span></a></li>
-   <li><a class="btn" href="press/burbank_title_transparent.png" download><span><b>Title</b><small>Transparent PNG</small></span></a></li>
-   <li><a class="btn" href="press/burbank_pumpkin_cutout.png" download><span><b>Pumpkin cutout</b><small>Transparent PNG</small></span></a></li>
-   <li><a class="btn" href="press/aff2026_laurels_white.png" download><span><b>AFF 2026 laurels</b><small>White PNG</small></span></a></li>
-   <li><a class="btn" href="#stills"><span><b>12 stills</b><small>Full-res JPGs, tap any still above</small></span></a></li>
-  </ul>
- </div>
-</section>
+
 
 <section class="card wash wash--sodium" id="contact" style="--wash:#C9863A" aria-labelledby="h-cta">
  <span data-mark="star" style="--w:70px;top:4px;right:6%;--c:var(--red)"></span>
@@ -480,17 +469,17 @@ footer a.hal{color:var(--ink);font-weight:700;display:inline-block;padding:12px 
 
 <footer class="card wash wash--brick" style="--wash:#5b3b2e">
  <div class="in-w">
-  <div class="panel torn" style="--rot:.4deg;transform:rotate(.4deg);max-width:640px">
-   <p class="t-label" style="margin:0 0 6px">Guerrero Productions · AFF 2026</p>
-   <a class="hal" href="https://mindshawk.github.io/chrisguerrero/">Chris Guerrero, director</a>
+  <div class="panel torn" style="--rot:.4deg;transform:rotate(.4deg);max-width:640px;display:grid;gap:12px">
+   <p class="t-label" style="margin:0">Meet the director</p>
+   <a class="btn btn--neon" href="https://mindshawk.github.io/chrisguerrero/" style="justify-content:center;min-height:54px">Chris Guerrero's contact page &#8594;</a>
+   <p style="margin:0;font-size:13px">Guerrero Productions · AFF 2026</p>
   </div>
  </div>
 </footer>
 
-<nav class="bar" aria-label="Quick actions, always available">
- <a href="#trailer"><b aria-hidden="true">&#9654;&#xFE0E;</b>Trailer</a>
- <a href="mailto:chris@guerreroproductions.com" data-mail="both"><b aria-hidden="true">@</b>Email</a>
- <a href="#press"><b aria-hidden="true">+</b>Press kit</a>
+<nav class="bar show" aria-label="Watch the trailer or email Chris">
+ <a href="#trailer" data-track="bar-trailer"><b aria-hidden="true">&#9654;&#xFE0E;</b>Watch the trailer</a>
+ <a href="mailto:chris@guerreroproductions.com" data-mail="both" data-track="bar-email"><b aria-hidden="true">@</b>Email Chris</a>
 </nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -521,7 +510,6 @@ if(a&&b){var now=Date.now(),e1=Date.parse(a.getAttribute("data-end")),e2=Date.pa
  var next=function(c){c.classList.add("next");var t=c.querySelector(".tg");t.textContent=t.getAttribute("data-label")+" · Next up"};
  if(now<e1)next(a);else if(now<e2){a.classList.add("past");next(b)}else{a.classList.add("past");b.classList.add("past")}}
 var bar=document.querySelector(".bar"),q=$("heroActions");
-if(bar&&q&&"IntersectionObserver" in window){new IntersectionObserver(function(e){bar.classList.toggle("show",!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(q)}
 })();
 </script>
 </body>
